@@ -7,4 +7,12 @@ void player::drawcard(vector<card> *stockpiles){
     stockpiles->pop_back();
 }
 
-
+card player::playcard(vector<card>* discardpiles,card thecard){
+    for (int i=0;i<inhand.size();i++){
+        if (inhand[i]==thecard){
+            card temp=inhand[i];
+            inhand.erase(inhand.begin()+i,inhand.begin()+i+1);
+            discardpiles->push_back(temp);
+        }
+    }
+}

@@ -2,6 +2,16 @@
 
 using namespace std;
 
+bool card::operator==(card tar){
+    bool test;
+    if (tar.returncol()==color && tar.returnnum()==number && tar.returntype()==type){
+        test=true;
+    } else {
+        test=false;
+    }
+    return test;
+}
+
 void card::printfunc(){
     switch(color){
         case 0:{
