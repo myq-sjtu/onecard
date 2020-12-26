@@ -13,6 +13,8 @@ private:
     vector<int> score;
 public:
     game(int,int,int);
+    int initialturn();
+    void initialcard();
     card oneturn();
     int onegame();
 };
