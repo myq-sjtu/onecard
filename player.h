@@ -8,6 +8,7 @@ protected:
     vector<card> inhand;
     int num;//玩家顺序
     int man;//是不是人:1是人
+    int score;
 public:
     void drawcard(vector<card>*);
     card playcard(vector<card>*,card);

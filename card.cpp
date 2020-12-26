@@ -46,10 +46,14 @@ void card::printfunc(){
             break;
         }
         case 2:{
-            cout<<"+4 ";
+            cout<<"禁 ";
             break;
         }
         case 3:{
+            cout<<"+4 ";
+            break;
+        }
+        case 4:{
             cout<<"变色 ";
             break;
         }

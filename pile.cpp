@@ -22,7 +22,7 @@ stockpile::stockpile(int num){
         }
     }
     for (int j=0;j<5;j++){
-        for (int k=0;k<4;k++){
+        for (int k=0;k<5;k++){
             card temp(0,j,k);
             allcard.push_back(temp);
         }

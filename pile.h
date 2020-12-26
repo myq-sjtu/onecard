@@ -18,6 +18,7 @@ public:
 class stockpile:public pile{
 public:
     stockpile(int);
+    stockpile(){};
 };
 
 class discardpile:public pile{
