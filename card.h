@@ -3,8 +3,16 @@
 
 #include<vector>
 #include<iostream>
+#include<ctime>
 
 using namespace std;
+
+typedef struct node{
+    player *pl;
+    struct node *next;
+    struct node *front;
+}node_t;
+
 
 class card{
 private:
@@ -13,6 +21,7 @@ private:
     int number;//for functional, 0
 public:
     bool operator== (card);
+    card(){type=color=number=0;};
     card(int,int,int);
     int returntype(){return type;};
     int returncol(){return color;};

@@ -7,9 +7,8 @@
 using namespace std;
 
 class pile{
-protected:
-    vector<card> allcard;
 public:
+    vector<card> allcard;
     pile()=default;
     void shuffle();
     virtual ~pile(){};
@@ -17,7 +16,7 @@ public:
 
 class stockpile:public pile{
 public:
-    stockpile(int);
+    void initial(int);
     stockpile(){};
 };
 

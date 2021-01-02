@@ -12,7 +12,7 @@ void pile::shuffle(){
     }
 }
 
-stockpile::stockpile(int num){
+void stockpile::initial(int num){
     for (int i=0;i<num;i++){
         for (int j=1;j<5;j++){
             for (int k=1;k<10;k++){

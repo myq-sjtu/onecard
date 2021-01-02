@@ -12,7 +12,7 @@ private:
     vector<player> allplayer;
     vector<int> score;
 public:
-    game(int,int,int);
+    game(int,int);
     int initialturn();
     void initialcard();
     card oneturn();

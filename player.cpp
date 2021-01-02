@@ -2,9 +2,9 @@
 
 using namespace std;
 
-void player::drawcard(vector<card> *stockpiles){
-    inhand.push_back(stockpiles->back());
-    stockpiles->pop_back();
+void player::drawcard(stockpile *stockpiles){
+    inhand.push_back((stockpiles->allcard).back());
+    stockpiles->allcard.pop_back();
 }
 
 card player::playcard(vector<card>* discardpiles,card thecard){
@@ -16,3 +16,5 @@ card player::playcard(vector<card>* discardpiles,card thecard){
         }
     }
 }
+
+
