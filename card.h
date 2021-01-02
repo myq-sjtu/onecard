@@ -21,7 +21,7 @@ private:
     int number;//for functional, 0
 public:
     bool operator== (card);
-    card(){type=color=number=0;};
+    card(){type=color=number=-1;};
     card(int,int,int);
     int returntype(){return type;};
     int returncol(){return color;};

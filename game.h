@@ -14,7 +14,7 @@ private:
 public:
     game(int,int);
     int initialturn();
-    void initialcard();
+    card initialcard();
     card oneturn();
     int onegame();
 };

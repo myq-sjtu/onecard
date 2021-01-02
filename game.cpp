@@ -57,3 +57,16 @@ int game::initialturn(){
     }
     return k;
 }
+
+card game::initialcard(){
+    card tmp;
+    for (int i=0;i<stock.allcard.size();i++){
+        if (stock.allcard[i].returncol!=0){
+            tmp=stock.allcard[i];
+            stock.allcard.erase(i,i+1);
+            break;
+        }
+    }
+    return tmp;
+}
+
