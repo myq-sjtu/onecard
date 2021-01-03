@@ -15,8 +15,10 @@ public:
     game(int,int);
     int initialturn();
     card initialcard();
-    card oneturn();
+    void initialinhand();
+    card oneturn(card,int);
     int onegame();
+    ~game();
 };
 
 #endif

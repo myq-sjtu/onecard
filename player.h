@@ -14,17 +14,21 @@ public:
     void clear(){inhand.clear();};
     player(){};
     void drawcard(stockpile*);
-    card playcard(vector<card>*,card);
+    virtual card playcard(discardpile*,card)=0;
+    bool canplay(card);
 };
 
 class NPC:public player{
 public:
-    NPC(int a){man=0;num=a;};    
+    NPC(int a){man=0;num=a;};
+    card playcard(discardpile*,card);    
 };
 
 class human:public player{
 public:
     human(int a){man=1;num=a;};
+    card playcard(discardpile*,card);
+    int choose(vector<card>);
 };
 
 #endif

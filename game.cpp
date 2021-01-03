@@ -12,15 +12,13 @@ game::game(int nofpile,int nofplayer){
     }
     human temp(0);
     allplayer.push_back(temp);
-    node_t *playerlist;
-    for (int i=0;i<nofplayer;i++){ 
+    /*for (int i=0;i<nofplayer;i++){ 
         if (i==0){
             playerlist=Initialize(&(allplayer[0]));
         } else {
             InsertLastList(&playerlist,&allplayer[i]);
         }
-    }
-    
+    }*/
 }
 
 int game::initialturn(){
@@ -61,12 +59,49 @@ int game::initialturn(){
 card game::initialcard(){
     card tmp;
     for (int i=0;i<stock.allcard.size();i++){
-        if (stock.allcard[i].returncol!=0){
+        if (stock.allcard[i].returncol()!=0){
             tmp=stock.allcard[i];
-            stock.allcard.erase(i,i+1);
+            (stock.allcard).erase(stock.allcard.begin()+i);
             break;
         }
     }
     return tmp;
 }
+
+void game::initialinhand(){
+    for (int i=0;i<allplayer.size();i++){
+        for (int j=0;j<5;j++){
+            allplayer[i].drawcard(&stock);
+        }
+    }
+}
+
+card game::oneturn(card lastcard,int num){
+    if(allplayer[num].canplay(lastcard)){
+        allplayer[num].playcard(&discard,lastcard);
+    } else {
+        allplayer[num].drawcard(&stock);
+    }
+}
+
+int game::onegame(){
+    initialinhand();
+    int i=initialturn(),cnt=0;
+    card first=initialcard();
+    card thiscard;
+    while (true){
+        if (allplayer[i].getinhand().size()==0){
+            break;
+        }
+        if(cnt==0){
+            thiscard=oneturn(first,i);
+        } else {
+            thiscard=oneturn(thiscard,i);
+        }
+        i++;
+        if (i==allplayer.size()) i=0;
+    }
+    cout<<"player "<<i+1<<"win!"<<endl;
+}
+
 
